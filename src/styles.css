@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+.main-nav .nav-item a:hover {
+
+  color: #ff131f !important;
+}
+.main-nav{
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);
+  z-index: 5;
+}
+.main-nav .navbar {
+  margin-bottom: 0px;
+  min-height: 65px !important;
+}
+.main-nav .nav-link {
+  font-size: 17px;
+  padding-top: 22px;
+  padding-left: 30px;
+}
+.main-nav .navbar-brand {
+  font-size: 36px;
+  padding-left: 40px;
+  padding-top: 20px;
+}
+.main-nav .navbar-brand a:hover{
+  text-decoration: none;
+  color: #fff;
+}

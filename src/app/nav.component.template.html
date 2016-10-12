@@ -1,0 +1,14 @@
+<div class="row">
+  <nav class="navbar navbar-inverse">
+    <div class="navbar-brand">
+      <a>{{TitleHead}}</a>
+    </div>
+  <div class="">
+    <ul class="nav navbar-nav">
+      <li class="nav-item" *ngFor="let nav of Navs" (click)="selectTab(nav)">
+       <a class="nav-link">{{nav.name}}</a>
+      </li>
+    </ul>
+  </div>
+  </nav>
+</div>
