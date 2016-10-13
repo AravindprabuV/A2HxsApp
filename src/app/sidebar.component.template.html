@@ -1,0 +1,27 @@
+<div class="row">
+  <nav class="sideNav sidebar pinned-left"  >
+    <div class="">
+      <div class="col-md-12">
+        <div class="glyphicon glyphicon-user  userImg"></div>
+        <div>User Name</div>
+        <div>{{currentRoute.id + currentRoute.url}}</div>
+      </div>
+      <div class="col-md-12">
+        <ul class="nav nav-pills nav-stacked">
+          <li *ngFor="let sideNav of SideNav" >
+            <a routerLinkActive="active" routerLink="{{sideNav.link}}">{{sideNav.name}}</a>
+            <div *ngIf="sideNav.child">
+              <ul class="nav nav-pills nav-stacked">
+                <li *ngFor="let child of sideNav.child">
+                  <a routerLinkActive="active" routerLink="{{child.link}}">
+                    {{child.name}}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

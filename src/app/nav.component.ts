@@ -13,13 +13,13 @@ export class NavComponent {
   nav={};
   selectedNav={};
   Navs=[
-    {link:'',name:'App Support',id:1}
-    ,{link:'',name:'CMS Dev',id:2}
-    ,{link:'',name:'CMS Testing',id:3}
-    ,{link:'',name:'BUD Dev',id:4}
-    ,{link:'',name:'BUD Testing',id:5}
-    ,{link:'',name:'Leave Tracker',id:6}
-    ,{link:'',name:'Admin',id:7}
+    {link:'/support',name:'App Support',id:1}
+    ,{link:'/cmsdev',name:'CMS Dev',id:2}
+    ,{link:'/cmstest',name:'CMS Testing',id:3}
+    ,{link:'/buddev',name:'BUD Dev',id:4}
+    ,{link:'/budtest',name:'BUD Testing',id:5}
+    ,{link:'/leave',name:'Leave Tracker',id:6}
+    ,{link:'/admin',name:'Admin',id:7}
     ];
 
   getSelectedTab(){
