@@ -1,0 +1,20 @@
+<div class="row"><div class="col-md-6">
+  <ul class="incidentItems">
+    <li class="incidentItem"  *ngFor="let incident of incidents" (click)="onSelected(inident)">
+      <span class="badge">{{incident.incidentRef}}</span>
+      {{incident.incidentDesc}}
+    </li>
+  </ul>
+</div>
+<div class="col-md-6">
+
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+  <div class="btn btn-default">
+    <span class="glyphicon glyphicon-plus-sign"></span>
+    Add Incidents
+  </div>
+</div>
+</div>

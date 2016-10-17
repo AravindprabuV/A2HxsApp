@@ -14,6 +14,8 @@ import {BudTComponent} from './budTest/budT.component';
 import {LeaveComponent} from './leaveTracker/leave.component';
 import {AdminComponent} from './Admin/admin.component';
 import {SideBarComponent} from './sidebar.component';
+import {HsxAppSupportRoutingModule} from "./appSupport/appS-routing.module";
+import {ListIncidents} from "./appSupport/Incidents/support-incident.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,8 @@ import {SideBarComponent} from './sidebar.component';
     AdminComponent,
     BudDComponent,
     BudTComponent,
-    SideBarComponent
+    SideBarComponent,
+    ListIncidents
   ],
   imports: [
     BrowserModule,

@@ -9,16 +9,10 @@ import {BudDComponent} from './budDev/budD.component';
 import {BudTComponent} from './budTest/budT.component';
 import {LeaveComponent} from './leaveTracker/leave.component';
 import {AdminComponent} from './Admin/admin.component';
-import {ListIncidents} from "./appSupport/Incidents/support-incident.component";
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home',  component: ContentComponent },
-  {path: 'support', component: AppSComponent,
-    children:[
-      {path:'',redirectTo:'incidents',pathMatch: 'full'},
-      { path: 'incidents',  component: ListIncidents }
-    ]
-  },
+  { path: 'support', component: AppSComponent },
   { path: 'cmsdev',     component: CmsDComponent },
   { path: 'cmstest',  component: CmsTComponent },
   { path: 'buddev', component: BudDComponent },
