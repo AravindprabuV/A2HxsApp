@@ -56,7 +56,7 @@ export class AppSComponent{
       ]
     },{
       name:'Incidents',
-      link:'incidets',
+      link:'incidents',
       id:1,
       child:[
       ]

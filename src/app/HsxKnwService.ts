@@ -5,13 +5,14 @@ import {Injectable} from "@angular/core";
 import {Incidents} from './Incidents'
 import {INCIDETNS} from "../mock";
 
+let hsxPromise = Promise.resolve(INCIDETNS);
 @Injectable()
 export class HsxKnwService{
-  getIncidents(): Promise<Incidents[]> {
-    return Promise.resolve(INCIDETNS);
+  getIncidents(){
+    return hsxPromise;
   }
   getIncident(id: number | string) {
-    return crisesPromise
-      .then(crises => crises.find(crisis => crisis.id === +id));
+    return hsxPromise
+      .then(incidents => incidents.find(incidents => incidents.incidentId === +id));
   }
 }

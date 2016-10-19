@@ -16,6 +16,8 @@ import {AdminComponent} from './Admin/admin.component';
 import {SideBarComponent} from './sidebar.component';
 import {HsxAppSupportRoutingModule} from "./appSupport/appS-routing.module";
 import {ListIncidents} from "./appSupport/Incidents/support-incident.component";
+import {HsxKnwService} from "./HsxKnwService";
+import {IncidentsDetails} from "./appSupport/Incidents/incidentsDetails.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,16 +31,18 @@ import {ListIncidents} from "./appSupport/Incidents/support-incident.component";
     BudDComponent,
     BudTComponent,
     SideBarComponent,
-    ListIncidents
+    ListIncidents,
+    IncidentsDetails
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    HsxAppRoutingModule
+    HsxAppRoutingModule,
+    HsxAppSupportRoutingModule
 
   ],
-  providers: [],
+  providers: [HsxKnwService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

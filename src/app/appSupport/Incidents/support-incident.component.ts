@@ -13,6 +13,7 @@ import {Params, ActivatedRoute, Router} from "@angular/router";
 })
 
 export class ListIncidents implements OnInit{
+  selectedId:number;
   incidents:Incidents[];
   constructor(private _hsxService:HsxKnwService,
               private route: ActivatedRoute,
@@ -28,5 +29,12 @@ export class ListIncidents implements OnInit{
       this._hsxService.getIncidents()
         .then(incidents =>this.incidents = incidents);
     });
+
+  }
+  onSelected(incident: Incidents)
+  {
+    this.selectedId = incident.incidentId;
+    this.router.navigate(['support/incidents',incident.incidentId]);
+
   }
 }
