@@ -10,7 +10,7 @@ import {HsxIncidentResolver} from "../HsxKnwResolver";
     RouterModule.forChild([
       {
         path: '',
-        redirectTo: '/  incidents',
+        redirectTo: '/incidents',
         pathMatch: 'full'
       },
       {

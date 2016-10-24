@@ -13,11 +13,86 @@ import {ListIncidents} from "./appSupport/Incidents/support-incident.component";
 import {HsxIncidentResolver} from "./HsxKnwResolver";
 import {IncidentsDetails} from "./appSupport/Incidents/incidentsDetails.component";
 import {HsxAppSupportRoutingModule} from "./appSupport/appS-routing.module";
+import {TeamSupportList} from "./appSupport/Team/team.component";
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: ContentComponent},
   {
-    path: 'support', component: AppSComponent
+    path: 'support',
+    children: [
+      {
+        path: '',
+        component: AppSComponent
+      },
+      {
+        path: 'incidents',
+        children: [
+          {
+            path: '',
+            component: AppSComponent,
+            children: [
+              {
+                path: '',
+                component: ListIncidents,
+                children:[
+
+                ]
+              },
+              {
+
+                path: ':id',
+                component: IncidentsDetails,
+                resolve: {
+                  incidents: HsxIncidentResolver
+                }
+              },
+              {
+                path: '',
+                component: ListIncidents,
+                children:[
+
+                ]
+              }
+
+            ]
+          }
+        ]
+      },
+      {
+        path:'team',
+        children: [
+          {
+            path: '',
+            component: AppSComponent,
+            children: [
+              {
+                path: '',
+                component: TeamSupportList,
+                children:[
+
+                ]
+              },
+              {
+
+                path: ':id',
+                component: IncidentsDetails,
+                resolve: {
+                  incidents: HsxIncidentResolver
+                }
+              },
+              {
+                path: '',
+                component: TeamSupportList,
+                children:[
+
+                ]
+              }
+
+            ]
+          }
+        ]
+      }
+    ]
   },
   {path: 'cmsdev', component: CmsDComponent},
   {path: 'cmstest', component: CmsTComponent},
@@ -29,8 +104,8 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),HsxAppSupportRoutingModule],
-    exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
   providers: [HsxIncidentResolver]
 })
 export class HsxAppRoutingModule {

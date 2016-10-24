@@ -22,8 +22,17 @@ export class ListIncidents implements OnInit{
 
   }
 
+  editIncident:Incidents={
+    incidentId:null,
+  incidentDesc:null,
+  incidentCause:null,
+  incidentResolution:null,
+  oCount:null,
+  incidentRef:null
+  }
+
   ngOnInit() {
-    this._hsxService.getIncidents().then(incidents =>this.incidents = incidents);
+//    this._hsxService.getIncidents().then(incidents =>this.incidents = incidents);
     this.route.params.forEach((params: Params) => {
       this.selectedId = params['id'];
       this._hsxService.getIncidents()
@@ -34,7 +43,13 @@ export class ListIncidents implements OnInit{
   onSelected(incident: Incidents)
   {
     this.selectedId = incident.incidentId;
-    this.router.navigate(['support/incidents',incident.incidentId]);
+    this.router.navigate([incident.incidentId],{relativeTo:this.route});
 
+  }
+  editSelected(incident: Incidents){
+   // this._hsxService.getIncident(incident.incidentId).then(incident => this.editIncident = incident);
+
+    this._hsxService.getIncident(incident.incidentId).then(incident => this.editIncident = incident);
+    alert('clicked'+this.editIncident.incidentRef+this.editIncident.oCount);
   }
 }

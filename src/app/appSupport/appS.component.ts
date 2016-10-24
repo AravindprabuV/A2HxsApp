@@ -45,14 +45,9 @@ export class AppSComponent{
       ]
     },{
       name:'Team',
-      link:'',
+      link:'team',
       id:1,
       child:[
-        {
-          name:'Pages',
-          link:'',
-          id:1
-        }
       ]
     },{
       name:'Incidents',

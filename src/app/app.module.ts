@@ -18,6 +18,8 @@ import {HsxAppSupportRoutingModule} from "./appSupport/appS-routing.module";
 import {ListIncidents} from "./appSupport/Incidents/support-incident.component";
 import {HsxKnwService} from "./HsxKnwService";
 import {IncidentsDetails} from "./appSupport/Incidents/incidentsDetails.component";
+import {EditIncidents} from "./appSupport/Incidents/editIncidents.component";
+import {TeamSupportList} from "./appSupport/Team/team.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,9 @@ import {IncidentsDetails} from "./appSupport/Incidents/incidentsDetails.componen
     BudTComponent,
     SideBarComponent,
     ListIncidents,
-    IncidentsDetails
+    IncidentsDetails,
+    EditIncidents,
+    TeamSupportList
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,38 @@
+<div class="row">
+  <div>
+    <form role="form" class="">
+      <div class="form-group">
+        <label for="incidentRef">Incident Reference</label>
+          <input type="" id="incidentRef" class="form-control" value="{{incident.incidentRef}}"  title="incidentRef">
+      </div>
+      <div class="form-group">
+        <label for="incidentDec">Description</label>
+        <input id="incidentDec" class="form-control" value="{{incident.incidentDesc}}" title="incidentRef">
+      </div>
+      <div class="form-group">
+        <label for="cause">Cause</label>
+        <textarea id="cause" class="form-control"  value="{{incident.incidentCause}}" title="incidentCause"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="resolution">Resolution</label>
+        <textarea id="resolution" class="form-control" value="{{incident.incidentResolution}}" title="incidentRef"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="count">Occurred</label>
+        <input type="number" id="count" class="form-control" value="{{incident.oCount}}" title="incidentRef">
+      </div>
+    </form>
+  </div>
+  <div class="btn btn-default" *ngIf="!incident.incidentId">
+    <span class="glyphicon glyphicon-plus-sign"></span>
+    Add Incidents
+  </div>
+  <div class="btn btn-default" *ngIf="incident.incidentId">
+    <span class="glyphicon glyphicon-plus-sign"></span>
+    Edit Incidents
+  </div>
+  <div class="btn btn-default btn-danger" (click)="resetData()" *ngIf="incident.incidentId">
+    <span class="glyphicon glyphicon-plus-sign" ></span>
+    Reset
+  </div>
+</div>

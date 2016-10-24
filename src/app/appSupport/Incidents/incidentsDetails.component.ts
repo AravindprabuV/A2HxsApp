@@ -16,9 +16,9 @@ export class IncidentsDetails implements OnInit {
               private router: Router) {}
 
   ngOnInit() {
-    this.route.data.forEach((data: { HsxIncidentResolver: Incidents }) => {
+    this.route.data.forEach((data: { incidents: Incidents }) => {
       console.log(data);
-      this.incidents = data.HsxIncidentResolver;
+      this.incidents = data.incidents;
     });
   }
   /*ngOnInit() {
